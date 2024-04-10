@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Want to start your yoga classes website online? Download yoga studio Premium website html template for your classes and course.">
+<meta name="keywords" content="yoga teacher, yoga responsive, yoga instructor, yoga studio, yoga theme, yoga blog, yoga website, yoga fitness, yoga templates, meditation website templates">
+
+<!-- SITE TITLE -->
+<title>Contact | BlazeBlog</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/LOGO.jpg">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">  
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="assets/css/ionicons.min.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!-- Flaticon Font CSS -->
+<link rel="stylesheet" href="assets/css/flaticon.css">
+<!-- Themify Font CSS -->
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<!-- jquery-ui CSS -->
+<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="assets/color/theme-default.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="loading_wrap">
+    	<img class="main_logo" src="assets/LOGO.jpg" alt="logo" />
+    </div>
+</div>
+<!-- END LOADER --> 
+
+<!-- START HEADER -->
+<style>
+.main_logo{
+    height:90px;
+    width:auto;
+    border-radius: 50%;
+    scale:.8;
+}
+.navbar-brand{
+    color:white;
+}
+.navbar-brand:hover{
+    color:rgba(255, 255, 255, 0.556);
+}
+
+@media(max-width:992px){
+    .nav-text{
+       font-size: 1rem;
+    }
+    .main_logo{
+       scale: .6;
+    }
+    .none{
+        display: none;
+    }
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.card {
+    height: auto;
+    z-index: 99;
+    transition: all 1s ease-in;
+    position: absolute;
+bottom : 100px;
+right:100px;
+   width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none; 
+    transition: transform 1s ease-in; /* Add transition */
+}
+
+.card.show {
+    z-index: 99;
+   
+    display: block;
+    transition: all 1s ease-in;
+    transform: translateY(0); /* Slide in */
+}
+
+.header {
+    z-index: 99;
+
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.message {
+    z-index: 99;
+
+    
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.input {
+    z-index: 99;
+
+    display: flex;
+}
+
+input[type="text"] {
+    z-index: 99;
+
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#toggleChatbot  {
+    z-index: 99;
+    position: fixed;
+    bottom: 50px;
+    right:50px;
+    background-color: #f22c57ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+button{
+    z-index: 99;
+
+    background-color: #f22c57ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.close-btn {
+    z-index: 99;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+ 
+ 
+</style>
+<button id="toggleChatbot"><i class="fa-solid fa-comment" style="font-size: 2rem;"></i></button> <!-- Button to toggle chatbot visibility -->
+
+    <div class="card" id="chatbot">
+        <button class="close-btn" onclick="closeChatbot()">Close</button>
+        <div class="header">
+            Blog Chatbot
+        </div>
+        <div class="message" id="bot">
+            Welcome! How can I assist you with your blog-related queries?
+        </div>
+        <div class="input">
+            <input type="text" id="userInput" placeholder="Ask a question...">
+            <button onclick="handleUserInput()">Send</button>
+        </div>
+    </div>
+    <script>
+          const blogQuestions = [
+            {
+                question: "How do I start a blog?",
+                answer: "Starting a blog involves choosing a niche, selecting a platform (like WordPress or Blogger), and creating valuable content."
+            },
+            {
+                question: "What topics can I write about on my blog?",
+                answer: "You can write about your passions, hobbies, experiences, or expertise. Consider what interests your target audience."
+            },
+            {
+                question: "How can I drive traffic to my blog?",
+                answer: "Promote your blog through social media, SEO optimization, guest posting, and engaging with other bloggers."
+            },
+            {
+                question: "What's the ideal blog post length?",
+                answer: "There's no one-size-fits-all answer, but aim for 1,000 to 2,000 words for in-depth content."
+            },
+            {
+                question: "How often should I publish new blog posts?",
+                answer: "Consistency matters. Publish at a frequency that you can sustain—whether it's weekly, biweekly, or monthly."
+            },
+            {
+                question: "How do I monetize my blog?",
+                answer: "Explore options like affiliate marketing, sponsored posts, selling digital products, or offering premium content."
+            }
+        ];
+
+        function getBotResponse(userInput) {
+            const cleanedInput = userInput.toLowerCase();
+            const matchedQuestion = blogQuestions.find(item => cleanedInput.includes(item.question.toLowerCase()));
+            if (matchedQuestion) {
+                return matchedQuestion.answer;
+            } else {
+                return "I'm sorry, I don't have an answer for that question.";
+            }
+        }
+
+        function handleUserInput() {
+            const userInput = document.getElementById("userInput").value;
+            const botResponse = getBotResponse(userInput);
+            displayMessage(userInput, "user");
+            displayMessage(botResponse, "bot");
+            document.getElementById("userInput").value = ""; // Clear the input field after sending the message
+        }
+
+        function displayMessage(message, sender) {
+            const chatDiv = document.createElement("div");
+            chatDiv.className = "message";
+            if (sender === "bot") {
+                chatDiv.style.backgroundColor = "#f9f9f9";
+            }
+            chatDiv.textContent = message;
+            document.getElementById("bot").parentNode.insertBefore(chatDiv, document.getElementById("bot").nextSibling);
+        }
+
+
+
+        const chatbot = document.getElementById("chatbot");
+        const toggleChatbotBtn = document.getElementById("toggleChatbot");
+
+        // Function to toggle chatbot visibility
+        toggleChatbotBtn.addEventListener("click", () => {
+            chatbot.classList.toggle("show");
+        });
+
+        // Function to close the chatbot
+        function closeChatbot() {
+            chatbot.classList.remove("show");
+        }
+
+    </script>
+<header class="header_wrap fixed-top light_skin main_menu_uppercase main_menu_weight_600 transparent_header "style="z-index: 50;">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg"> 
+            <a class="navbar-brand" href="/home">
+                <img class="main_logo" src="assets/LOGO.jpg" alt="logo" /> BlazeBlog
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link " href="#">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a class="dropdown-item nav-link nav_item" href="/trending">Trending Blogs</a></li>
+                                
+                                <li><a class="dropdown-item nav-link nav_item" href="/popular">Popular Blogs</a></li>
+                                <li><a class="dropdown-item nav-link nav_item" href="single">Single Page View</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu">
+                            <ul> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/about">About</a></li>
+                                
+                                
+                                
+                                <li><a class="dropdown-item nav-link nav_item" href="/faq">FAQ</a></li> 
+                                
+                                <!--<li><a class="dropdown-item nav-link nav_item" href="/error">404 Page</a></li>-->
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shop</a>
+                        <div class="dropdown-menu">
+                            <ul> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/shop">Shop List</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/single">Product Detail</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/cart">Cart</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/checkout">Checkout</a></li> 
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link active" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav attr-nav align-items-center">
+                <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="ion-ios-search-strong"></i></a>
+                    <div class="search-overlay">
+                        <div class="search_wrap">
+                            <form>
+                                <div class="rounded_input">
+                                    <input type="text" placeholder="Search" class="form-control" id="search_input">
+                                </div>
+                                <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown cart_wrap">
+                    <a class="nav-link" href="#" data-toggle="dropdown"><i class="ion-android-cart"></i><span class="cart_count">2</span></a>
+                        <div class="cart_box dropdown-menu dropdown-menu-right">
+                            
+                            <ul class="cart_list">
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="assets/images/cart_thamb1.jpg" alt="cart_thumb1">yoga mat For Exercises</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span>23.00</span></span>
+                                </li>
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="assets/images/cart_thamb2.jpg" alt="cart_thumb2">Running Shoes</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span>45.00</span></span>
+                                </li>
+                            </ul>
+                        <div class="cart_footer">
+                            <p class="cart_total">Total: <span class="cart_amount"> <span class="price_symbole">$</span>68.00</span></p>
+                            <p class="cart_buttons"><a href="/cart" class="btn btn-default rounded-0 view-cart">View Cart</a><a href="/checkout" class="btn btn-dark rounded-0 checkout">Checkout</a></p>
+                        </div>
+                        <li>
+                            <a  class="nav-link" href="/" ><button class="btn btn-default btn-sm ml-">LOGOUT</button></a>
+                        </li>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- END HEADER --> 
+
+<!-- START SECTION BREADCRUMB -->
+<section class="breadcrumb_section page-title-light background_bg overlay_bg_blue_70" data-img-src="assets/OIP.jpg">
+	<div class="container">
+    	<div class="row align-items-center">
+        	<div class="col-sm-12 text-center">
+            	<div class="page-title">
+            		<h1>Contact Us</h1>
+                </div>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                  </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION BREADCRUMB -->
+
+<!-- START SECTION CONTACT -->
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+            	<div class="heading_s2">
+                	<span class="sub_heading">Contact Us</span>
+                	<h3>Get In touch</h3>
+                </div>
+                <p>Got a question, feedback, or just want to chat? We'd love to hear from you! Here are the ways you can reach out:</p>
+                <ul class="contact_info contact_info_style2 list_none">
+                    <li>
+                        <span class="ti-mobile"></span>
+                        <p>+91 9987545631</p>
+                    </li>
+                    <li>
+                        <span class="ti-email"></span>
+                        <a href="mailto:info@yourmail.com">tanmaymirgal26@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="ti-location-pin"></span>
+                        <address>Juhu Versova Link Road, Mumbai, Maharashtra 400053 </address>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-8 col-md-6 mt-4 mt-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+            	<div class="field_form icon_form">
+                    <form method="post" name="enq">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                            	<div class="form-input">
+                                    <span>
+                                        <i class="ti-user"></i>
+                                    </span>
+                                    <input required="required" placeholder="Enter Name *" id="first-name" class="form-control" name="name" type="text">
+                                </div>
+                             </div>
+                            <div class="form-group col-lg-6">
+                            	<div class="form-input">
+                                    <span>
+                                        <i class="ti-email"></i>
+                                    </span>
+                                	<input required="required" placeholder="Enter Email *" id="email" class="form-control" name="email" type="email">
+                                </div>
+                            </div>
+                            <div class="form-group col-12">
+                            	<div class="form-input">
+                                    <span>
+                                        <i class="ti-folder"></i>
+                                    </span>
+                                	<input placeholder="Enter Subject" id="subject" class="form-control" name="subject" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-12">
+                            	<div class="form-input">
+                                    <span>
+                                        <i class="ti-comments"></i>
+                                    </span>
+                                	<textarea required="required" placeholder="Message *" id="description" class="form-control" name="message" rows="5"></textarea>	
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" title="Submit Your Message!" class="btn btn-default" id="submitButton" name="submit" value="Submit">Submit</button>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                        </div>
+                    </form>		
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION CONTACT -->
+
+<!-- START SECTION MAP -->
+<div class="map_section">
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-12 p-0">
+                <div class="contact_map animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193229.77301255226!2d-74.05531241936525!3d40.823236500441624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f613438663b5%3A0xce20073c8862af08!2sW+123rd+St%2C+New+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1533565007513" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION MAP -->
+
+<!-- START FOOTER -->
+<footer class="bg_dark footer_dark">
+	<div class="top_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-7 mb-4 mb-lg-0">
+                    <h5 class="widget_title">Abouts us</h5>
+                    <div class="footer_desc">
+                    <p>Feel free to modify this version to better suit the tone and focus of your blog.</p>
+                    </div>
+                    <ul class="contact_info list_none">
+                        <li>
+                            <span class="fa fa-map-marker-alt "></span>
+                            <address>Mumbai,Mahrashtra,India</address>
+                        </li>
+                        <li>
+                            <span class="fa fa-mobile-alt"></span>
+                            <p>+91 9987545631</p>
+                        </li>
+                        <li>
+                            <span class="fa fa-envelope"></span>
+                            <a href="mailto:info@yourmail.com">tanmaymirgal26@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-5 mb-4 mb-lg-0">
+                	<h5 class="widget_title">Quick Links</h5>
+                	<ul class="list_none widget_links links_style2">
+                    	<li><a href="#">Join Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Support center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-7 mb-4 mb-md-0">
+                	<h5 class="widget_title">Latest Post</h5>
+                    <ul class="recent_post border_bottom_dash list_none">
+                        <li>
+                        	<div class="post_footer">
+                                <div class="post_content">
+                                	<h6><a href="#">TechCrunch - Latest news and reviews on startup, innovation, and technology</a></h6>
+                                    <span class="post_date"><i class="ion-android-time"></i>April 14, 2024</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="post_footer">
+                                <div class="post_content">
+                                	<h6><a href="#">Entertainment Weekly - Latest news and reviews on movies, TV shows, and celebrity gossip</a></h6>
+                                    <span class="post_date"><i class="ion-android-time"></i>April 14, 2024</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                	<h5 class="widget_title">Subscribe Newsletter</h5>
+                    <div class="newsletter_form mb-4 mb-lg-5">
+                        <form> 
+                            <input type="text" class="form-control rounded-0" required="" placeholder="Enter Email Address">
+                            <button type="submit" title="Subscribe" class="btn btn-default rounded-0" name="submit" value="Submit"><i class="ion-paper-airplane"></i></button>
+                        </form>
+                    </div>
+                    <h5 class="widget_title">Stay Connected</h5>
+                    <ul class="list_none social_icons radius_social">
+                        <li><a href="#" class="sc_facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="sc_twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="sc_google"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#" class="sc_instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="sc_pinterest"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <div class="bottom_footer border_top_transparent">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="copyright m-md-0 text-center text-md-left">Copyright © 2024 - By BlazeBlog </p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list_none footer_link text-center text-md-right">
+                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape_img">
+        <div class="ol_shape10">
+            <img src="assets/images/shape10.png" alt="shape36"/>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script> 
+<!-- jquery-ui js --> 
+<script src="assets/js/jquery-ui.js"></script>
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- jquery dd js  --> 
+<script src="assets/js/jquery.dd.min.js"></script>
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- jquery.parallax-scroll js -->
+<script src="assets/js/jquery.parallax-scroll.js"></script>
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- imagesloaded js -->
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- cookie js -->
+<script src="assets/js/js.cookie.js"></script>
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+
+</body>
+</html>

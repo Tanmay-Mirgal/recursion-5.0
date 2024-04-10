@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Want to start your yoga classes website online? Download yoga studio Premium website html template for your classes and course.">
+<meta name="keywords" content="yoga teacher, yoga responsive, yoga instructor, yoga studio, yoga theme, yoga blog, yoga website, yoga fitness, yoga templates, meditation website templates">
+
+<!-- SITE TITLE -->
+<title>BlazeBlog</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="assets/LOGO.jpg">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">  
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="assets/css/ionicons.min.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+<!-- Flaticon Font CSS -->
+<link rel="stylesheet" href="assets/css/flaticon.css">
+<!-- Themify Font CSS -->
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<!-- jquery-ui CSS -->
+<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="assets/color/theme-default.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.card {
+    height: auto;
+    z-index: 99;
+    transition: all 1s ease-in;
+    position: absolute;
+bottom : 100px;
+right:100px;
+   width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none; 
+    transition: transform 1s ease-in; /* Add transition */
+}
+
+.card.show {
+    z-index: 99;
+   
+    display: block;
+    transition: all 1s ease-in;
+    transform: translateY(0); /* Slide in */
+}
+
+.header {
+    z-index: 99;
+
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.message {
+    z-index: 99;
+
+    
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.input {
+    z-index: 99;
+
+    display: flex;
+}
+
+input[type="text"] {
+    z-index: 99;
+
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+#toggleChatbot  {
+    z-index: 99;
+    position: fixed;
+    bottom: 50px;
+    right:50px;
+    background-color: #f22c57ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+button{
+    z-index: 99;
+
+    background-color: #f22c57ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.close-btn {
+    z-index: 99;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+</style>
+<body>
+    <button id="toggleChatbot"><i class="fa-solid fa-comment" style="font-size: 2rem;"></i></button> <!-- Button to toggle chatbot visibility -->
+
+    <div class="card" id="chatbot">
+        <button class="close-btn" onclick="closeChatbot()">Close</button>
+        <div class="header">
+            Blog Chatbot
+        </div>
+        <div class="message" id="bot">
+            Welcome! How can I assist you with your blog-related queries?
+        </div>
+        <div class="input">
+            <input type="text" id="userInput" placeholder="Ask a question...">
+            <button onclick="handleUserInput()">Send</button>
+        </div>
+    </div>
+    <script>
+          const blogQuestions = [
+            {
+                question: "How do I start a blog?",
+                answer: "Starting a blog involves , selecting a platform (like WordPress or Blogger), and creating valuable content."
+            },
+            {
+                question: "What topics can I write about on my blog?",
+                answer: "You can write about your passions, hobbies, experiences, or expertise. Consider what interests your target audience."
+            },
+            {
+                question: "How can I drive traffic to my blog?",
+                answer: "Promote your blog through social media, SEO optimization, guest posting, and engaging with other bloggers."
+            },
+            {
+                question: "What's the ideal blog post length?",
+                answer: "There's no one-size-fits-all answer, but aim for 1,000 to 2,000 words for in-depth content."
+            },
+            {
+                question: "How often should I publish new blog posts?",
+                answer: "Consistency matters. Publish at a frequency that you can sustain—whether it's weekly, biweekly, or monthly."
+            },
+            {
+                question: "How do I monetize my blog?",
+                answer: "Explore options like affiliate marketing, sponsored posts, selling digital products, or offering premium content."
+            }
+        ];
+
+        function getBotResponse(userInput) {
+            const cleanedInput = userInput.toLowerCase();
+            const matchedQuestion = blogQuestions.find(item => cleanedInput.includes(item.question.toLowerCase()));
+            if (matchedQuestion) {
+                return matchedQuestion.answer;
+            } else {
+                return "I'm sorry, I don't have an answer for that question.";
+            }
+        }
+
+        function handleUserInput() {
+            const userInput = document.getElementById("userInput").value;
+            const botResponse = getBotResponse(userInput);
+            displayMessage(userInput, "user");
+            displayMessage(botResponse, "bot");
+            document.getElementById("userInput").value = ""; // Clear the input field after sending the message
+        }
+
+        function displayMessage(message, sender) {
+            const chatDiv = document.createElement("div");
+            chatDiv.className = "message";
+            if (sender === "bot") {
+                chatDiv.style.backgroundColor = "#f9f9f9";
+            }
+            chatDiv.textContent = message;
+            document.getElementById("bot").parentNode.insertBefore(chatDiv, document.getElementById("bot").nextSibling);
+        }
+
+
+
+        const chatbot = document.getElementById("chatbot");
+        const toggleChatbotBtn = document.getElementById("toggleChatbot");
+
+        // Function to toggle chatbot visibility
+        toggleChatbotBtn.addEventListener("click", () => {
+            chatbot.classList.toggle("show");
+        });
+
+        // Function to close the chatbot
+        function closeChatbot() {
+            chatbot.classList.remove("show");
+        }
+
+    </script>
+<!-- LOADER -->
+<div id="preloader">
+    <div class="loading_wrap">
+    	<img class="main_logo" src="assets/LOGO.jpg" alt="logo" />
+    </div>
+</div>
+<!-- END LOADER --> 
+<style>
+
+
+    #preloader{
+        scale:1;
+    }
+    .main_logo{
+        height:90px;
+        width:auto;
+        border-radius: 50%;
+        scale:.8;
+        border:1px solid black;
+    }
+    .navbar-brand{
+        color:rgb(0, 0, 0);
+    }
+  
+    @media(max-width:992px){
+        .nav-text{
+           font-size: 1rem;
+        }
+        .main_logo{
+           scale: .6;
+        }
+        .none{
+            display: none;
+        }
+    }
+     
+     </style>
+<!-- START HEADER -->
+<header class="header_wrap fixed-top light_skin main_menu_uppercase main_menu_weight_600 transparent_header " style="z-index: 50;">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg"> 
+            <a class="navbar-brand nav-text " href="/home" style="color: white !important;">
+                <a href="/home" ><img  href="/home" class="main_logo text-white " src="assets/LOGO.jpg" alt="logo" ></a> <h5 style="color: white !important;">BlazeBlog</h5>
+               
+            </a>
+            <button class="navbar-toggler" type="button" style="position: relative;top:3.5vh;" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link active " href="/home">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Blog</a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a class="dropdown-item nav-link nav_item" href="/trending">Trending Blogs</a></li>
+                                
+                                <li><a class="dropdown-item nav-link nav_item" href="/popular">Popular Blogs</a></li>
+                                <li><a class="dropdown-item nav-link nav_item" href="/">Single Page View</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu">
+                            <ul> 
+                                <li><a class="dropdown-item nav-link nav_item active" href="/about">About</a></li>
+                                
+                                
+                                
+                                <li><a class="dropdown-item nav-link nav_item" href="/faq">FAQ</a></li> 
+                                
+                                <!--<li><a class="dropdown-item nav-link nav_item" href="/error">404 Page</a></li>-->
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Shop</a>
+                        <div class="dropdown-menu">
+                            <ul> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/shop">Shop List</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item" href="/singleblog">Product Detail</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item " href="/cart">Cart</a></li> 
+                                <li><a class="dropdown-item nav-link nav_item active" href="/checkout">Checkout</a></li> 
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link " href="/contact">Contact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <ul class="navbar-nav attr-nav align-items-center">
+                <li><a href="javascript:void(0);" class="nav-link search_trigger"><i class="ion-ios-search-strong none"></i></a>
+                    <div class="search-overlay">
+                        <div class="search_wrap">
+                            <form>
+                                <div class="rounded_input">
+                                    <input type="text" placeholder="Search" class="form-control" id="search_input">
+                                </div>
+                                <button type="submit" class="search_icon"><i class="fas fa-search none"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="dropdown cart_wrap">
+                    <a class="nav-link" href="#" data-toggle="dropdown"><i class="ion-android-cart none"></i><span class="cart_count none">2</span></a>
+                    <li>
+                        <a  class="nav-link none" href="/" ><button class="btn btn-default btn-sm ml-">LOGOUT</button></a>
+                    </li>
+                        <div class="cart_box dropdown-menu dropdown-menu-right">
+                            <ul class="cart_list">
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="assets/images/cart_thamb1.jpg" alt="cart_thumb1">yoga mat For Exercises</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span>23.00</span></span>
+                                </li>
+                                <li>
+                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
+                                    <a href="#"><img src="assets/images/cart_thamb2.jpg" alt="cart_thumb2">Running Shoes</a>
+                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span>45.00</span></span>
+                                </li>
+                            </ul>
+                        <div class="cart_footer">
+                            <p class="cart_total">Total: <span class="cart_amount"> <span class="price_symbole">$</span>68.00</span></p>
+                            <p class="cart_buttons"><a href="/cart" class="btn btn-default rounded-0 view-cart">View Cart</a><a href="/checkout" class="btn btn-dark rounded-0 checkout">Checkout</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- END HEADER --> 
+
+<!-- START SECTION BANNER -->
+<section class="banner_slider full_screen p-0">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active background_bg overlay_bg_60" data-img-src="assets/Slider-1.jpg">
+            	<div class="banner_slide_content">
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-lg-6">
+                                <div class="banner_content2 animation text_white" data-animation="fadeIn" data-animation-delay="0.3s" data-parallax='{"y": 30, "smoothness": 10}'>
+                                    <h2 class="font_style1 animation" data-animation="fadeInUp" data-animation-delay="0.5s">Welcome to the Blog Studio</h2>
+                                    <p class="animation" data-animation="fadeInUp" data-animation-delay="0.6s">Dive into captivating articles that explore the depths of human experience and spark your curiosity. Join us on a journey of discovery, where every post is a new adventure!"</p>
+                                    <a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.7s">Learn More</a>
+                                    <a class="btn btn-outline-light btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.8s">Contact Us</a>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item background_bg overlay_bg_60" data-img-src="assets/Slider-2.jpg">
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-6">
+                                <div class="banner_content2 animation text_white" data-animation="fadeIn" data-animation-delay="0.4s">
+                                    <h2 class="font_style1 animation" data-animation="fadeInDown" data-animation-delay="0.5s">Explore, Read, Reflect</h2>
+                                    <p class="animation" data-animation="fadeInUp" data-animation-delay="0.6s">Explore, learn, and be inspired with our diverse range of captivating content. Join us on a journey of discovery! </p>
+                                    <a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.7s">Learn More</a>
+                                    <a class="btn btn-outline-light btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.8s">Contact Us</a>
+                        		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item background_bg overlay_bg_60" data-img-src="assets/Slider-3.jpeg">
+                <div class="banner_slide_content">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-7">
+                                <div class="banner_content2 animation text-center text_white" data-animation="fadeIn" data-animation-delay="0.4s" data-parallax='{"y": 30, "smoothness": 10}'>
+                                    <h2 class="font_style1 animation" data-animation="fadeInDown" data-animation-delay="0.5s">BlazeBlog is a High-Quality Blog Studio </h2>
+                                    <p class="animation" data-animation="fadeInUp" data-animation-delay="0.6s">Join us for insightful articles, captivating stories, and thought-provoking discussions. Let's discover together!"</p>
+                                    <a class="btn btn-default btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.7s">Learn More</a>
+                                    <a class="btn btn-outline-light btn-radius animation" href="#" data-animation="fadeInUp" data-animation-delay="0.8s">Contact Us</a>
+                       			 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <div class="carousel_nav carousel_style2">
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev"><i class="ion-chevron-left"></i></a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next"><i class="ion-chevron-right"></i></a>
+    </div>
+    </div>
+</section>
+<!-- END SECTION BANNER -->
+
+<!-- START SECTION BENIFIT -->
+<section class="pb_70 bg_gray">
+	<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-10 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                <div class="heading_s3 text-center">	
+                    <h3>Trending Blogs</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <p>Elevate your consciousness with insightful articles on mindfulness, self-care, and personal growth, guiding you towards a more balanced and fulfilling life.</p>
+                <div class="small_divider clearfix"></div>
+            </div>
+        </div>
+		<div class="row">
+        	<div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                	<div class="box_icon">
+                    	<i class="fa-solid fa-book" style="position: relative;top:3vh;"></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5>Allowing them to Lead</h5>
+                        <p>It is a difficult transition for older generation to relinquish control of how things happen. It means that changes will be instituted that make older adults uncomfortable. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                	<div class="box_icon">
+                    	<i class="fa-solid fa-podcast" style="position: relative;top:3vh;"></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5>Jesus and Loneliness</h5>
+                        <p> Stephen examines secular narratives about purpose and authenticity, connectedness and progress, and compares them to the promises made by the Bible. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                	<div class="box_icon" >
+                    	<i class="fa-solid fa-book-open" style="position: relative;top:3vh;" ></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5>Navigating Worldly Challenges</h5>
+                        <p> Navigating the Challenges of Modern Life to Raise Christ-Centered Generations” “To make Christ known to your children.” What if that truly became your “one thing?”</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                	<div class="box_icon">
+                    	<i class="fa-solid fa-person" style="position: relative;top:3vh;"></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5> The Power of a Purposeful Plan </h5>
+                        <p>In today’s fast-paced world, where numerous demands compete for our time and attention, it’s all too easy for important matters to get overshadowed. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                	<div class="box_icon">
+                    	<i class="fa-solid fa-industry" style="position: relative;top:3vh;"></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5>Reigniting family-centered faith</h5>
+                        <p>Reigniting family-centered faith isn’t a nostalgic nod to the past but a clarion call to reclaim what has always been the heartbeat of resilient. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+            	<div class="icon_box icon_box_style3 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                	<div class="box_icon">
+                    	<i class="fa-solid fa-graduation-cap" style="position: relative;top:3vh;"></i>
+                    </div>
+                    <div class="intro_desc">
+                    	<h5>Challenges of Christian Parents</h5>
+                        <p> Navigating the Challenges of Christian Parenting in a Counterculture World.Christian parents face multifaceted challenges as they strive to raise spiritually mature children within a culture </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- END SECTION BENIFIT -->
+
+<!-- START SECTION COUNTER -->
+<section class="overlay_bg_70 parallax_bg" style="background-color:black;">
+    <div class="container">
+        <div class="row">
+        	<div class="col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+            	<div class="box_counter counter_white text-center">
+                    <i class="flaticon-trainers"></i>
+                    <h3 class="counter_text"><span class="counter">18</span>+</h3>
+                    <p>Daily</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+            	<div class="box_counter counter_white text-center">
+                    <i class="flaticon-trophy"></i>
+                    <h3 class="counter_text"><span class="counter">15</span>+</h3>
+                    <p>Weekly</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+            	<div class="box_counter counter_white text-center">
+                    <i class="flaticon-users"></i>
+                    <h3 class="counter_text"><span class="counter">1800</span>+</h3>
+                    <p>Monthly</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+            	<div class="box_counter counter_white text-center">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3 class="counter_text"><span class="counter">45</span>+</h3>
+                    <p>Yearly</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION COUNTER -->
+
+<!-- START SECTION EVENTS -->
+<section class="pb_70">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-8 col-md-10 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+            	<div class="heading_s3 text-center">	
+                    <h3>Awesome Upcoming Blog</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <p>Prepare for an amazing adventure with our upcoming blog! Stay tuned for captivating content and engaging stories that will inspire and entertain. </p>
+                <div class="small_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="event_box event_box_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                    <div class="event_img">
+                        <a href="#"><img  style="height:350px;width:380px;object-fit: cover;object-position: center;"  src="assets/Image 1.jpg" alt="event_img"/></a>
+                        <div class="event_date">
+                            <h5><span>22</span> Apr</h5>
+                        </div>
+                    </div>
+                    <div class="event_info">	
+                        <h5 class="event_title"><a href="#">The Power Of Memorizing Scriptures</a></h5>
+                        <ul class="list_none event_meta">
+                            <li><i class="ti-time"></i>11:30</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="event_box event_box_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                    <div class="event_img">
+                        <a href="#"><img style="height:350px;width:380px;object-fit: cover;object-position: center;"  src="assets/Image 2.jpg" alt="event_img"/></a>
+                        <div class="event_date">
+                            <h5><span>27</span> Apr</h5>
+                        </div>
+                    </div>
+                    <div class="event_info">	
+                        <h5 class="event_title"><a href="#">the Power of Prepositions</a></h5>
+                        <ul class="list_none event_meta">
+                            <li><i class="ti-time"></i>9:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6"  >
+                <div class="event_box event_box_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.4s" >
+                    <div class="event_img" >
+                        <a href="#"><img style="height:350px;width:380px;object-fit: cover;object-position: center;"  src="assets/Image 3.jpg" alt="event_img"/></a>
+                        <div class="event_date">
+                            <h5><span>30</span> Apr</h5>
+                        </div>
+                    </div>
+                    <div class="event_info">	
+                        <h5 class="event_title"><a href="#">The Scientific Benefits Of Gratitude</a></h5>
+                        <ul class="list_none event_meta">
+                            <li><i class="ti-time"></i>10:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION EVENTS -->
+
+
+
+<!-- START SECTION PRICING TABLE -->
+<section class="pb_70" >
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-8 col-md-10 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s" >
+            	<div class="heading_s3 text-center"]>
+                	<h3>Book Pricing Plan</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <p>Affordable options for every reader, ensuring access to a diverse library of titles without compromising your budget. </p>
+            </div>
+        </div>
+    	<div class="row">
+        	<div class="col-12">
+            	<div class="tab-style2 pt-2 text-center" >
+                    <ul class="nav nav-tabs sliding_tab animation" role="tablist" data-animation="fadeInUp" data-animation-delay="0.3s">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-toggle="tab" href="#Weekly" role="tab" aria-controls="Weekly" aria-selected="False">Weekly</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-toggle="tab" href="#Monthly" role="tab" aria-controls="Monthly" aria-selected="true">Monthly</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#Yearly" role="tab" aria-controls="Yearly" aria-selected="false">Yearly</a>
+                        </li>
+                	</ul>
+                </div>
+                <div class="tab-content" >
+                    <div class="tab-pane fade show active" id="Monthly" role="tabpanel">
+                    	<div class="row">
+                        	<div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.1s" data-img-src="assets/images/price_img1.jpg">
+                                    <div class="pr_title_wrap text_white" style="background-color:black;">
+                                        <h4 class="pr_title">regular member</h4>
+                                        <div class="price_tage">
+                                            <h2>$49<span>/ Month</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3" style="background-color:black;">
+                                        <ul class="list_none pr_list">
+                                            <li>Basic Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-outline-light btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.2s" data-img-src="assets/images/price_img2.jpg">
+                                	<div class="pricing_ribbon">Popular</div>
+                                    <div class="pr_title_wrap text_white">
+                                        <h4 class="pr_title">V.i.p Member</h4>
+                                        <div class="price_tage">
+                                            <h2>$99<span>/ Month</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3">
+                                        <ul class="list_none pr_list">
+                                            <li>Standard Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-white btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.3s" data-img-src="assets/images/price_img3.jpg">
+                                    <div class="pr_title_wrap text_white">
+                                        <h4 class="pr_title">Premium Member</h4>
+                                        <div class="price_tage">
+                                            <h2>$199<span>/ Month</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3">
+                                        <ul class="list_none pr_list">
+                                            <li>Unlimited Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-outline-light btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Yearly" role="tabpanel">
+                    	<div class="row">
+                        	<div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.1s" data-img-src="assets/images/price_img4.jpg">
+                                    <div class="pr_title_wrap text_white">
+                                        <h4 class="pr_title">regular member</h4>
+                                        <div class="price_tage">
+                                            <h2>$99<span>/ Year</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3">
+                                        <ul class="list_none pr_list">
+                                            <li>Basic Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-outline-light btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.2s" data-img-src="assets/images/price_img5.jpg">
+                               		<div class="pricing_ribbon">Popular</div>
+                                    <div class="pr_title_wrap text_white">
+                                        <h4 class="pr_title">V.i.p Member</h4>
+                                        <div class="price_tage">
+                                            <h2>$199<span>/ Year</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3">
+                                        <ul class="list_none pr_list">
+                                            <li>Standard Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-white btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pricing_box pricing_style2 background_bg animation" data-animation="flip_box" data-animation-delay="0.3s" data-img-src="assets/images/price_img6.jpg">
+                                    <div class="pr_title_wrap text_white">
+                                        <h4 class="pr_title">Premium Member</h4>
+                                        <div class="price_tage">
+                                            <h2>$299<span>/ Year</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="pr_content text_white pt-3">
+                                        <ul class="list_none pr_list">
+                                            <li>Unlimited Options</li>
+                                            <li>Full Access</li>
+                                            <li>Customers Support</li>
+                                            <li>Free Updates</li>
+                                            <li>Advanced Options</li>
+                                        </ul>
+                                    </div>
+                                    <div class="pr_footer">
+                                        <a href="#" class="btn btn-outline-light btn-radius">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION PRICING TABLE -->
+
+<!-- START SECTION TESTIMONIAL -->
+<section class="overlay_bg_60 parallax_bg" data-parallax-bg-color="black">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-8 col-md-10 text-center text_white animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                <div class="heading_s3 text-center heading_light">
+                    <h3>Our Client Say!</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <div class="xs_divider clearfix d-none d-md-block"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        	<div class="col-md-12 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+            	<div class="testimonial_slider testimonial_section testimonial_style3 text_white carousel_slider owl-carousel owl-theme dots_white nav_transparent_white" data-margin="15" data-nav="true" data-dots="false" data-loop="true" data-autoplay="true" data-items="1" data-center="true" data-autoheight="true">
+                    <div class="testimonial_box">
+                    	<div class="testi_desc">
+                            <p>"Working with Maria Walter was a revelation - her storytelling prowess truly brings our brand's message to life.</p>
+                        </div>
+                        <div class="testi_meta">
+                        	<div class="testimonial_img">
+                                <img  style="object-fit: cover;object-position: center;width:150px;height:80px" src="assets/3.0.jpg" alt="client">
+                            </div>
+                        	<div class="testi_user">
+                            	<h5>Merry Walter</h5>
+                                <span class="text-white">Author</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                    	<div class="testi_desc">
+                            <p>"A wordsmith weaving captivating narratives with precision and passion. Join in for a journey of imagination and discovery through the written word."</p>
+                        </div>
+                        <div class="testi_meta">
+                        	<div class="testimonial_img">
+                                <img  style="object-fit: cover;object-position: center;width:150px;height:80px" src="assets/1.0.jpg" alt="client">
+                            </div>
+                        	<div class="testi_user">
+                            	<h5>Tony Mark</h5>
+                                <span class="text-white">Author</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                    	<div class="testi_desc">
+                            <p>"Crafting captivating narratives with precision and passion. Join for a journey of imagination and discovery through her written word."</p>
+                        </div>
+                        <div class="testi_meta">
+                        	<div class="testimonial_img">
+                                <img style="object-fit: cover;object-position: center;width:150px;height:80px" src="assets/7.0.jpg" alt="client">
+                            </div>
+                        	<div class="testi_user">
+                            	<h5>Calvin William</h5>
+                                <span class="text-white">Author</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial_box">
+                    	<div class="testi_desc">
+                            <p>" Weaving captivating narratives with precision and passion. Embark on a journey of imagination and discovery through his written word.
+                                "</p>
+                        </div>
+                        <div class="testi_meta">
+                        	<div class="testimonial_img">
+                                <img  style="object-fit: cover;object-position: top;width:150px;height:80px" src="assets/2.0.jpg" alt="client">
+                            </div>
+                        	<div class="testi_user">
+                            	<h5>Joseph Walter</h5>
+                                <span class="text-white">Author</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION TESTIMONIAL -->
+
+<!-- START SECTION TEACHER -->
+<section class="pb_70">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-8 col-md-10 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+            	<div class="heading_s3 text-center">
+                	<h3>Our Best Work</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <p>Dive into a captivating journey where every word resonates with timeless wisdom and profound meaning. Experience the power of storytelling at its finest." </p>
+                <div class="xs_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-3 col-sm-6">
+            	<div class="team_box team_style1 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                	<div class="team_img">
+                    	<img  style="object-fit: cover;object-position: center;width:255px;height:255px" src="assets/1.0.jpg" alt="team1">
+                        <ul class="list_none social_icons social_style1 rounded_social">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team_info text-center">
+                        <div class="team_title">
+                            <h5><a href="#">Tony Mark</a></h5>
+                            <span>Author</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+            	<div class="team_box team_style1 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                	<div class="team_img">
+                    	<img style="object-fit: cover;object-position: center;width:255px;height:255px" src="assets/3.0.jpg" alt="team2">
+                        <ul class="list_none social_icons social_style1 rounded_social">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team_info text-center">
+                        <div class="team_title">
+                            <h5><a href="#">Grace Wong</a></h5>
+                            <span>Author</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+            	<div class="team_box team_style1 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                	<div class="team_img">
+                    	<img style="object-fit: cover;object-position: center;width:255px;height:255px" src="assets/7.0.jpg" alt="team3">
+                        <ul class="list_none social_icons social_style1 rounded_social">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team_info text-center">
+                        <div class="team_title">
+                            <h5><a href="#">Joseph Redwood</a></h5>
+                            <span>Author</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+            	<div class="team_box team_style1 animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+                	<div class="team_img">
+                    	<img style="object-fit: cover;object-position: top;width:255px;height:255px" src="assets/2.0.jpg" alt="team4">
+                        <ul class="list_none social_icons social_style1 rounded_social">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team_info text-center">
+                        <div class="team_title">
+                            <h5><a href="#">Henry Walter</a></h5>
+                            <span>Author</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION TEACHER -->
+
+<!-- START SECTION NEWSLETTER -->
+<section class="bg_default">
+	<div class="container">
+    	<div class="row align-items-center">
+        	<div class="col-lg-6 text_white">
+                <div class="heading_s3 mb-3 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                    <h3>Subscribe Our Newsletter</h3>
+                </div>
+                <p class="m-lg-0 animation" data-animation="fadeInUp" data-animation-delay="0.03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc id varius nunc.</p>
+               </div>
+               <div class="col-lg-6">
+                <div class="newsletter_form2 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                    <form> 
+                        <input type="text" class="form-control" required="" placeholder="Enter Email Address">
+                        <button type="submit" title="Subscribe" class="btn btn-default btn-radius" name="submit" value="Submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION NEWSLETTER -->
+
+<!-- START SECTION BLOG -->
+<section class="pb_70">
+	<div class="container">
+    	<div class="row justify-content-center">
+        	<div class="col-xl-6 col-lg-8 col-md-10 text-center animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+            	<div class="heading_s3 text-center">
+                	<h3>From Our Blog & News</h3>
+                    <div class="title_icon"><i class="flaticon-lotus"></i></div>
+                </div>
+                <p>Explore fresh insights and breaking news from our blog and news section. Stay informed, entertained, and ahead of the curve. </p>
+                <div class="xs_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        	<div class="col-lg-4 col-md-6">
+            	<div class="blog_post blog_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                	<div class="blog_img">
+                        <a href="#">
+                            <img src="assets/Image 4.jpg" alt="blog_small_img1">
+                        </a>
+                    </div>
+                    <div class="blog_content">
+                    	<h5 class="blog_title"><a href="#">The Secret Ingridient Of Endurance </a></h5>
+                        <ul class="list_none blog_meta">
+                        	<li><a href="#"><img src="assets/LOGO-removebg-preview.png" alt="image"><span>BlazeBlog</span></a></li>
+                            <li><a href="#"><i class="far fa-calendar"></i>Mar 18, 2024</a></li>
+                            <li><a href="#"><i class="far fa-comments"></i>4</a></li>
+                        </ul>
+                        <p>The fact or power of enduring an unpleasant or difficult process or situation without giving way.</p>
+                        <a href="#" class="blog_link">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+            	<div class="blog_post blog_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.3s">
+                	<div class="blog_img">
+                        <a href="#">
+                            <img src="assets/Image 5.jpg" alt="blog_small_img2">
+                        </a>
+                    </div>
+                    <div class="blog_content">
+                    	<h5 class="blog_title"><a href="#">We are Comitted To Ocean Beach</a></h5>
+                        <ul class="list_none blog_meta">
+                        	<li><a href="#"><img src="assets/LOGO-removebg-preview.png" alt="image"><span>BlazeBlog</span></a></li>
+                            <li><a href="#"><i class="far fa-calendar"></i>Mar 21, 2024</a></li>
+                            <li><a href="#"><i class="far fa-comments"></i>4</a></li>
+                        </ul>
+                        <p>I heard this question several years ago, and little did I know that it would become a question that drives me and shapes everything about how I approach “doing church.</p>
+                        <a href="#" class="blog_link">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+            	<div class="blog_post blog_style1 box_shadow4 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                	<div class="blog_img">
+                        <a href="#">
+                            <img src="assets/Image 6.jpg" alt="blog_small_img3">
+                        </a>
+                    </div>
+                    <div class="blog_content">
+                    	<h5 class="blog_title"><a href="#">Trusting God For Blank Spaces</a></h5>
+                        <ul class="list_none blog_meta">
+                        	<li><a href="#"><img src="assets/LOGO-removebg-preview.png" alt="image"><span>BlazeBlog</span></a></li>
+                            <li><a href="#"><i class="far fa-calendar"></i>Mar 23, 2024</a></li>
+                            <li><a href="#"><i class="far fa-comments"></i>4</a></li>
+                        </ul>
+                        <p>Imagine reading a book to your child and in the middle of the story, closing the book</p>
+                        <a href="#" class="blog_link">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION BLOG -->
+
+<!-- START FOOTER -->
+<footer class="footer_dark background_bg overlay_bg_80" data-img-color="black">
+	<div class="top_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-7">
+                	<div class="footer_logo">
+                    	<a href="/home"><img  id="LOGO" style="height:10vh;width:auto;display: flex;justify-content: center;align-items: center;position: relative;left:35%;border-radius: 50%;;" alt="logo" src="assets/LOGO.jpg"></a>
+                    </div>
+                    <div class="footer_desc">
+                    	<p>An online platform where individuals or organizations share informative articles, opinions, and insights on various topics.</p>
+                        <ul class="contact_info list_none">
+                        	<li>
+                                <span class="fa fa-map-marker-alt "></span>
+                                <address>Mumbai,Maharshatra,India</address>
+                            </li>
+                            <li>
+                                <span class="fa fa-mobile-alt"></span>
+                                <p>+91 9987545631</p>
+                            </li>
+                            <li>
+                                <span class="fa fa-envelope"></span>
+                                <a href="mailto:info@yourmail.com">tanmaymirgal26@gmail.com</a>
+                            </li>
+	                    </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-5">
+                	<h5 class="widget_title3">Quick Links</h5>
+                	<ul class="list_none widget_links links_style2">
+                    	<li><a href="#">Join Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Support center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-7">
+                	<h5 class="widget_title3">Letest Post</h5>
+                    <ul class="recent_post border_bottom_dash list_none">
+                        <li>
+                        	<div class="post_footer">
+                                <div class="post_content">
+                                	<h6><a href="#">TechCrunch - Latest news and reviews on startup, innovation, and technology</a></h6>
+                                    <span class="post_date"><i class="ion-android-time"></i>April 14, 2024</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                        	<div class="post_footer">
+                                <div class="post_content">
+                                	<h6><a href="#"></a>Entertainment Weekly - Latest news and reviews on movies, TV shows, and celebrity gossip</h6>
+                                    <span class="post_date"><i class="ion-android-time"></i>April 14, 2024</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                	<h5 class="widget_title3">Instagram</h5>
+                    <ul class="list_none instafeed">
+                    	<li><a href="#"><i class="ti-instagram" style="color:pink;"></i></span></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook" style="color:pink;"></i></span></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter" style="color:pink;"></i></span></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                <div class="bottom_footer border_top_transparent">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="copyright m-md-0 text-center text-md-left">Copyright © 2019 - Template Made By BlazeBlog</p>
+                        </div>
+                        <div class="col-md-5">
+                            <ul class="list_none footer_link text-center text-md-right">
+                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+<!-- Latest jQuery --> 
+<script src="assets/js/jquery-1.12.4.min.js"></script> 
+<!-- jquery-ui js --> 
+<script src="assets/js/jquery-ui.js"></script>
+<!-- popper min js --> 
+<script src="assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap --> 
+<script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+<!-- owl-carousel min js  --> 
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+<!-- magnific-popup min js  --> 
+<script src="assets/js/magnific-popup.min.js"></script> 
+<!-- waypoints min js  --> 
+<script src="assets/js/waypoints.min.js"></script> 
+<!-- parallax js  --> 
+<script src="assets/js/parallax.js"></script> 
+<!-- jquery dd js  --> 
+<script src="assets/js/jquery.dd.min.js"></script>
+<!-- countdown js  --> 
+<script src="assets/js/jquery.countdown.min.js"></script> 
+<!-- jquery.counterup.min js --> 
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- jquery.parallax-scroll js -->
+<script src="assets/js/jquery.parallax-scroll.js"></script>
+<!-- fit video  -->
+<script src="assets/js/jquery.fitvids.js"></script>
+<!-- imagesloaded js -->
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<!-- isotope min js --> 
+<script src="assets/js/isotope.min.js"></script>
+<!-- cookie js -->
+<script src="assets/js/js.cookie.js"></script>
+<!-- scripts js --> 
+<script src="assets/js/scripts.js"></script>
+
+</body>
+</html>
